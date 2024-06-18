@@ -1,8 +1,8 @@
-const caixaPrincipal = document.querySelector('.caixa-principal')
-const caixaPerguntas = document.querySelector('.caixa-perguntas')
-const caixaAlternativas = document.querySelector('.caixa-alternativas')
-const caixaResultado = document.querySelector('.caixa-resultado')
-const textoResultado = document.querySelector('.texto-resultado')
+const caixaPrincipal = document.querySelector('.caixa-principal');
+const caixaPerguntas = document.querySelector('.caixa-perguntas');
+const caixaAlternativas = document.querySelector('.caixa-alternativas');
+const caixaResultado = document.querySelector('.caixa-resultado');
+const textoResultado = document.querySelector('.texto-resultado');
 
 const perguntas = [
     {
@@ -20,24 +20,34 @@ const perguntas = [
 
     },
     {
-        enunciado: "Pergunta 3",
-        alternativas: ["Arternativa 1",
-            "Alternativa 2"
+        enunciado: "Quantas janelas existem na Catedral de Milão?",
+        alternativas: ["50",
+            "40"
         ]
 
     },
     {
-        enunciado: "Pergunta 4",
-        alternativas: ["Arternativa 1",
-            "Alternativa 2"
+        enunciado: "Ao ser inaugurada qual era o grau de sua inclinação?",
+        alternativas: ["1,6°",
+            "1,4°"
         ]
 
     },
     {
-        enunciado: "Pergunta 5",
-        alternativas: ["Arternativa 1",
-            "Alternativa 2"
+        enunciado: "Quando a Casa de Julieta foi contruída?",
+        alternativas: ["No século XIII",
+            "No século XIV"
         ]
 
     } // fecha objeto de pergunta
 ]; //fecha lista de perguntas
+
+let atual =0;
+let perguntaAtual;
+
+function mostraPergunta(){
+    perguntaAtual = perguntas[atual];
+    caixaPerguntas.textContent = perguntaAtual.enunciado;
+}
+
+mostraPergunta();
